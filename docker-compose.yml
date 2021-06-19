@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  web:
+    container_name: web
+    build:
+      context: ./
+      target: dev-stage
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/svr
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1G"
